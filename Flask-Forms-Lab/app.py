@@ -30,9 +30,12 @@ def login():
 def home():
 	return render_template("home.html",htmlFacbebook=facebook_friends)
 
+@app.route('/friend_exists/<string:name>')
+def friend_ex(name):
+	return render_template('friend_exists.html', st= name in facebook_friends)
+
+
 if __name__ == "__main__":  # Makes sure this is the main process
 	app.run( # Starts the site
     debug=True
 	)
-@app.route('/home/<string:name>')
-def /friend_exists(name):
